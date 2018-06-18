@@ -393,7 +393,6 @@ PRODUCT_PACKAGES += \
     adsprpcd \
     cnd \
     dpmQmiMgr \
-    energy-awareness \
     hvdcp_opti \
     android.hardware.bluetooth@1.0-service-qti \
     android.hardware.drm@1.2-service.widevine \
