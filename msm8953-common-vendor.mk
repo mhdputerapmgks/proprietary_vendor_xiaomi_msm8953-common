@@ -110,7 +110,6 @@ PRODUCT_PACKAGES += \
     libGLESv2_adreno \
     libQTapGLES \
     libq3dtools_adreno \
-    activity_recognition.msm8953 \
     android.hardware.bluetooth@1.0-impl-qti \
     sound_trigger.primary.msm8953 \
     vendor.qti.hardware.bluetooth_audio@2.0-impl \
