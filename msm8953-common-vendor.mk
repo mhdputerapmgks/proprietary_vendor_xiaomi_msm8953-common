@@ -111,7 +111,6 @@ PRODUCT_PACKAGES += \
     libQTapGLES \
     libq3dtools_adreno \
     android.hardware.bluetooth@1.0-impl-qti \
-    sound_trigger.primary.msm8953 \
     vendor.qti.hardware.bluetooth_audio@2.0-impl \
     vendor.qti.hardware.bluetooth_sar@1.0-impl \
     vendor.qti.hardware.btconfigstore@1.0-impl \
