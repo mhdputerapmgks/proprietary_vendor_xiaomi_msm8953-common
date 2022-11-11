@@ -165,7 +165,6 @@ PRODUCT_PACKAGES += \
     libtinyxml2_1 \
     sensors.ssc \
     vendor.qti.hardware.tui_comm@1.0 \
-    sound_trigger.primary.msm8953 \
     vendor.qti.hardware.bluetooth_audio@2.0-impl \
     libacdb-fts \
     libacdbloader \
