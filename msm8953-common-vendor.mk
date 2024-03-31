@@ -13,7 +13,6 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/msm8953-common/proprietary/system_ext/etc/permissions/qcrilhook.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/qcrilhook.xml \
     vendor/xiaomi/msm8953-common/proprietary/system_ext/etc/permissions/qti_libpermissions.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/qti_libpermissions.xml \
     vendor/xiaomi/msm8953-common/proprietary/system_ext/etc/permissions/qti_permissions.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/qti_permissions.xml \
-    vendor/xiaomi/msm8953-common/proprietary/vendor/etc/cacert_location.pem:$(TARGET_COPY_OUT_VENDOR)/etc/cacert_location.pem \
     vendor/xiaomi/msm8953-common/proprietary/vendor/etc/cne/mwqem.conf:$(TARGET_COPY_OUT_VENDOR)/etc/cne/mwqem.conf \
     vendor/xiaomi/msm8953-common/proprietary/vendor/etc/cne/profileMwqem.xml:$(TARGET_COPY_OUT_VENDOR)/etc/cne/profileMwqem.xml \
     vendor/xiaomi/msm8953-common/proprietary/vendor/etc/cne/wqeclient/ATT/ATT_profile1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/cne/wqeclient/ATT/ATT_profile1.xml \
@@ -65,17 +64,18 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/msm8953-common/proprietary/vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc \
     vendor/xiaomi/msm8953-common/proprietary/vendor/etc/init/vendor.qti.rmt_storage.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.rmt_storage.rc \
     vendor/xiaomi/msm8953-common/proprietary/vendor/etc/init/vendor.qti.tftp.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.tftp.rc \
+    vendor/xiaomi/msm8953-common/proprietary/vendor/etc/lowi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/lowi.conf \
     vendor/xiaomi/msm8953-common/proprietary/vendor/etc/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf \
     vendor/xiaomi/msm8953-common/proprietary/vendor/etc/perf/commonresourceconfigs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/commonresourceconfigs.xml \
     vendor/xiaomi/msm8953-common/proprietary/vendor/etc/perf/perfboostsconfig.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perfboostsconfig.xml \
     vendor/xiaomi/msm8953-common/proprietary/vendor/etc/perf/perfconfigstore.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perfconfigstore.xml \
     vendor/xiaomi/msm8953-common/proprietary/vendor/etc/perf/targetconfig.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/targetconfig.xml \
     vendor/xiaomi/msm8953-common/proprietary/vendor/etc/perf/targetresourceconfigs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/targetresourceconfigs.xml \
+    vendor/xiaomi/msm8953-common/proprietary/vendor/etc/sap.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sap.conf \
     vendor/xiaomi/msm8953-common/proprietary/vendor/etc/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config \
     vendor/xiaomi/msm8953-common/proprietary/vendor/etc/seccomp_policy/imsrtp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/imsrtp.policy \
     vendor/xiaomi/msm8953-common/proprietary/vendor/etc/seccomp_policy/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
     vendor/xiaomi/msm8953-common/proprietary/vendor/etc/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf \
-    vendor/xiaomi/msm8953-common/proprietary/vendor/etc/xtra_root_cert.pem:$(TARGET_COPY_OUT_VENDOR)/etc/xtra_root_cert.pem \
     vendor/xiaomi/msm8953-common/proprietary/vendor/firmware/a506_zap.b00:$(TARGET_COPY_OUT_VENDOR)/firmware/a506_zap.b00 \
     vendor/xiaomi/msm8953-common/proprietary/vendor/firmware/a506_zap.b01:$(TARGET_COPY_OUT_VENDOR)/firmware/a506_zap.b01 \
     vendor/xiaomi/msm8953-common/proprietary/vendor/firmware/a506_zap.b02:$(TARGET_COPY_OUT_VENDOR)/firmware/a506_zap.b02 \
@@ -195,10 +195,11 @@ PRODUCT_PACKAGES += \
     com.qualcomm.qti.uceservice@2.2 \
     com.qualcomm.qti.uceservice@2.3 \
     android.hardware.bluetooth@1.0-impl-qti \
-    vendor.qti.gnss@3.0-impl \
+    vendor.qti.gnss@4.0-impl \
     vendor.qti.hardware.alarm@1.0-impl \
     vendor.qti.hardware.bluetooth_sar@1.0-impl \
     vendor.qti.hardware.btconfigstore@1.0-impl \
+    vendor.qti.hardware.qccvndhal@1.0-impl \
     lib-imsSDP \
     lib-imscmservice \
     lib-imsdpl \
@@ -217,8 +218,13 @@ PRODUCT_PACKAGES += \
     libGPreqcancel_svc \
     libSecureUILib \
     libStDrvInt \
+    libasn1cper \
+    libasn1crt \
+    libasn1crtx \
     libbt-hidlclient \
     libbtnv \
+    libcdfw \
+    libcdfw_remote_api \
     libcne \
     libcneapiclient \
     libcneoplookup \
@@ -235,10 +241,10 @@ PRODUCT_PACKAGES += \
     libizat_core \
     liblbs_core \
     libloc_api_v02 \
+    libloc_socket \
     liblocationservice \
     liblocationservice_glue \
     liblowi_client \
-    liblowi_wifihal \
     liblqe \
     libminksocket \
     libnetmgr \
@@ -249,10 +255,10 @@ PRODUCT_PACKAGES += \
     libpdmapper \
     libpdnotifier \
     libperipheral_client \
+    libqcc_file_agent \
     libqcmaputils \
     libqcrilFramework \
     libqcrildatactl \
-    libqdma_file_agent \
     libqisl \
     libqrtr \
     libqsocket \
@@ -268,7 +274,6 @@ PRODUCT_PACKAGES += \
     libsecureui \
     libsecureui_svcsock \
     libsettings \
-    libslimclient \
     libssd \
     libsystem_health_mon \
     libthermalfeature \
@@ -296,8 +301,9 @@ PRODUCT_PACKAGES += \
     vendor.qti.gnss@1.2 \
     vendor.qti.gnss@2.0 \
     vendor.qti.gnss@2.1 \
-    vendor.qti.gnss@3.0-service \
     vendor.qti.gnss@3.0 \
+    vendor.qti.gnss@4.0-service \
+    vendor.qti.gnss@4.0 \
     vendor.qti.hardware.alarm@1.0 \
     vendor.qti.hardware.bluetooth_sar@1.0 \
     vendor.qti.hardware.data.cne.internal.api@1.0 \
@@ -312,6 +318,9 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.data.qmi@1.0 \
     vendor.qti.hardware.fm@1.0 \
     vendor.qti.hardware.mwqemadapter@1.0 \
+    vendor.qti.hardware.qccsyshal@1.0_vendor \
+    vendor.qti.hardware.qccvndhal@1.0-halimpl \
+    vendor.qti.hardware.qccvndhal@1.0 \
     vendor.qti.hardware.radio.am@1.0 \
     vendor.qti.hardware.radio.ims@1.0 \
     vendor.qti.hardware.radio.ims@1.1 \
@@ -377,7 +386,11 @@ PRODUCT_PACKAGES += \
     libdpmtcm \
     libimscamera_jni \
     libimsmedia_jni \
+    libqcc \
+    libqcc_file_agent_sys \
     vendor.qti.diaghal@1.0 \
+    vendor.qti.hardware.qccsyshal@1.0-halimpl \
+    vendor.qti.hardware.qccsyshal@1.0 \
     vendor.qti.imsrtpservice@3.0 \
     CneApp \
     IWlanService \
@@ -390,7 +403,7 @@ PRODUCT_PACKAGES += \
     dpmapi \
     qcrilhook \
     manifest_android.hardware.drm@1.2-service.widevine.xml \
-    vendor.qti.gnss@3.0-service.xml \
+    vendor.qti.gnss@4.0-service.xml \
     adpl \
     adsprpcd \
     cnd \
@@ -424,7 +437,6 @@ PRODUCT_PACKAGES += \
     qti \
     rmt_storage \
     sensors.qti \
-    slim_daemon \
     tftp_server \
     thermal-engine \
     wcnss_service_xiaomi \
