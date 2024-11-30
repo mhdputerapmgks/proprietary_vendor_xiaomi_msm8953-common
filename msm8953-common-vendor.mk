@@ -148,8 +148,6 @@ PRODUCT_PACKAGES += \
     libbluetooth_audio_session_qti \
     libbtnv \
     libc2d30_bltlib \
-    libcdsp_default_listener \
-    libcdsprpc \
     libcne \
     libcneapiclient \
     libcneoplookup \
@@ -159,7 +157,6 @@ PRODUCT_PACKAGES += \
     libdsutils \
     libfastcvadsp_stub \
     libfastcvopt \
-    libfastrpc_utf_stub \
     libgcs-calwrapper \
     libgcs-ipc \
     libgcs-osal \
@@ -206,7 +203,6 @@ PRODUCT_PACKAGES += \
     libsensor1 \
     libsensor_reg \
     libsensor_user_cal \
-    libsysmon_cdsp_skel \
     libthermalclient \
     libtinyxml2_1 \
     libwms \
@@ -402,7 +398,6 @@ PRODUCT_PACKAGES += \
     manifest_android.hardware.drm@1.2-service.widevine.xml \
     vendor.qti.gnss@3.0-service.xml \
     adsprpcd \
-    cdsprpcd \
     cnd \
     dpmQmiMgr \
     energy-awareness \
