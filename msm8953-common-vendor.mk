@@ -179,8 +179,6 @@ PRODUCT_PACKAGES += \
     libqti-perfd \
     libqti-util \
     libqtigef \
-    librs_adreno \
-    librs_adreno_sha1 \
     libscalar \
     libsdm-color \
     libsdm-diag \
