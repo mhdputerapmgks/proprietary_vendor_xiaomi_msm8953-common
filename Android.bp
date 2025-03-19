@@ -702,9 +702,9 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "liblog",
+                "libc",
                 "libcutils",
                 "libc++",
-                "libc",
                 "libm",
                 "libdl",
             ],
@@ -715,9 +715,9 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "liblog",
+                "libc",
                 "libcutils",
                 "libc++",
-                "libc",
                 "libm",
                 "libdl",
             ],
@@ -744,6 +744,7 @@ cc_prebuilt_library_shared {
                 "libdiag",
                 "libcutils",
                 "libmdmdetect",
+                "libnetutils",
                 "libc++",
                 "libc",
                 "libm",
@@ -759,6 +760,7 @@ cc_prebuilt_library_shared {
                 "libdiag",
                 "libcutils",
                 "libmdmdetect",
+                "libnetutils",
                 "libc++",
                 "libc",
                 "libm",
@@ -1175,37 +1177,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libminksocket",
-    owner: "xiaomi",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libminksocket.so",
-            ],
-            shared_libs: [
-                "libc",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libminksocket.so",
-            ],
-            shared_libs: [
-                "libc",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libmm-hdcpmgr",
     owner: "xiaomi",
     strip: {
@@ -1348,7 +1319,7 @@ cc_prebuilt_library_shared {
                 "libdiag",
                 "libidl",
                 "libqmi_client_qmux",
-                "libqmi",
+                "libqmi_legacy",
                 "liblog",
                 "libc++",
                 "libc",
@@ -1365,7 +1336,7 @@ cc_prebuilt_library_shared {
                 "libdiag",
                 "libidl",
                 "libqmi_client_qmux",
-                "libqmi",
+                "libqmi_legacy",
                 "liblog",
                 "libc++",
                 "libc",
@@ -1391,7 +1362,6 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib/libqdi.so",
             ],
             shared_libs: [
-                "libqmi",
                 "libdiag",
                 "libdsutils",
                 "libqmiservices",
@@ -1399,6 +1369,7 @@ cc_prebuilt_library_shared {
                 "libqmi_common_so",
                 "libqmi_client_qmux",
                 "libqmi_client_helper",
+                "libqmi",
                 "liblog",
                 "libc++",
                 "libc",
@@ -1411,7 +1382,6 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libqdi.so",
             ],
             shared_libs: [
-                "libqmi",
                 "libdiag",
                 "libdsutils",
                 "libqmiservices",
@@ -1419,6 +1389,7 @@ cc_prebuilt_library_shared {
                 "libqmi_common_so",
                 "libqmi_client_qmux",
                 "libqmi_client_helper",
+                "libqmi",
                 "liblog",
                 "libc++",
                 "libc",
@@ -1545,9 +1516,7 @@ cc_prebuilt_library_shared {
                 "libcutils",
                 "libutils",
                 "libqmi_encdec",
-                "libqmi_client_qmux",
                 "liblog",
-                "libmdmdetect",
                 "libc++",
                 "libc",
                 "libm",
@@ -1562,9 +1531,7 @@ cc_prebuilt_library_shared {
                 "libcutils",
                 "libutils",
                 "libqmi_encdec",
-                "libqmi_client_qmux",
                 "liblog",
-                "libmdmdetect",
                 "libc++",
                 "libc",
                 "libm",
@@ -1640,12 +1607,12 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib/libqmi_client_qmux.so",
             ],
             shared_libs: [
-                "libcutils",
                 "libdiag",
                 "libdsutils",
                 "libqmiservices",
                 "libidl",
                 "liblog",
+                "libcutils",
                 "libc++",
                 "libc",
                 "libm",
@@ -1657,12 +1624,12 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libqmi_client_qmux.so",
             ],
             shared_libs: [
-                "libcutils",
                 "libdiag",
                 "libdsutils",
                 "libqmiservices",
                 "libidl",
                 "liblog",
+                "libcutils",
                 "libc++",
                 "libc",
                 "libm",
@@ -1784,6 +1751,55 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "libcutils",
                 "libutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libqmi_legacy",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libqmi_legacy.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "libqmi_client_qmux",
+                "libdiag",
+                "libdsutils",
+                "libqmiservices",
+                "libidl",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libqmi_legacy.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "libqmi_client_qmux",
+                "libdiag",
+                "libdsutils",
+                "libqmiservices",
+                "libidl",
+                "liblog",
                 "libc++",
                 "libc",
                 "libm",
@@ -4408,7 +4424,6 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libdsi_netctrl.so",
             ],
             shared_libs: [
-                "libqmi",
                 "libqdi",
                 "libdiag",
                 "libcutils",
@@ -4421,6 +4436,7 @@ cc_prebuilt_library_shared {
                 "libqmi_common_so",
                 "libqmi_client_qmux",
                 "libqmi_client_helper",
+                "libqmi",
                 "libc++",
                 "libc",
                 "libm",
@@ -4730,6 +4746,33 @@ cc_prebuilt_library_shared {
                 "libqmi_cci",
                 "libqmi_common_so",
                 "libqmi_client_helper",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libminksocket",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libminksocket.so",
+            ],
+            shared_libs: [
+                "libqrtr",
+                "libcutils",
                 "liblog",
                 "libc++",
                 "libc",
@@ -5054,6 +5097,32 @@ cc_prebuilt_library_shared {
                 "liblog",
                 "qtimutex",
                 "libsettings",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libqcrildatactl",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libqcrildatactl.so",
+            ],
+            shared_libs: [
+                "libqmi_cci",
+                "libqmiservices",
                 "libc++",
                 "libc",
                 "libm",
@@ -8261,10 +8330,16 @@ cc_prebuilt_library_shared {
                 "proprietary/system_ext/lib64/libdiag_system.so",
             ],
             shared_libs: [
+                "vendor.qti.diaghal@1.0",
+                "libhidlbase",
                 "liblog",
+                "libutils",
+                "android.hidl.allocator@1.0",
+                "android.hidl.memory@1.0",
+                "libhidlmemory",
+                "libc",
                 "libcutils",
                 "libc++",
-                "libc",
                 "libm",
                 "libdl",
             ],
@@ -8445,6 +8520,34 @@ cc_prebuilt_library_shared {
                 "libbinder",
                 "liblog",
                 "libandroid",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.diaghal@1.0",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/vendor.qti.diaghal@1.0.so",
+            ],
+            shared_libs: [
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
                 "libc++",
                 "libc",
                 "libm",
