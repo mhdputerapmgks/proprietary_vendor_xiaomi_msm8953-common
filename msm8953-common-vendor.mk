@@ -6,10 +6,6 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/xiaomi/msm8953-common
 
 PRODUCT_COPY_FILES += \
-    vendor/xiaomi/msm8953-common/proprietary/system/etc/cne/Nexus/ATT/ATT_profiles.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/cne/Nexus/ATT/ATT_profiles.xml \
-    vendor/xiaomi/msm8953-common/proprietary/system/etc/cne/Nexus/ROW/ROW_profiles.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/cne/Nexus/ROW/ROW_profiles.xml \
-    vendor/xiaomi/msm8953-common/proprietary/system/etc/cne/Nexus/VZW/VZW_profiles.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/cne/Nexus/VZW/VZW_profiles.xml \
-    vendor/xiaomi/msm8953-common/proprietary/system/etc/permissions/com.qualcomm.qti.imscmservice.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.qualcomm.qti.imscmservice.xml \
     vendor/xiaomi/msm8953-common/proprietary/system/etc/permissions/qti_libpermissions.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/qti_libpermissions.xml \
     vendor/xiaomi/msm8953-common/proprietary/system/etc/permissions/qti_permissions.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/qti_permissions.xml \
     vendor/xiaomi/msm8953-common/proprietary/system_ext/etc/dpm/dpm.conf:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/dpm/dpm.conf \
@@ -103,58 +99,30 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/msm8953-common/proprietary/vendor/radio/qcril_database/upgrade/6_version_update_ecc_table.sql:$(TARGET_COPY_OUT_VENDOR)/radio/qcril_database/upgrade/6_version_update_ecc_table.sql
 
 PRODUCT_PACKAGES += \
-    com.qualcomm.qti.dpm.api@1.0_vendor \
     eglSubDriverAndroid \
     libEGL_adreno \
     libGLESv1_CM_adreno \
     libGLESv2_adreno \
     libQTapGLES \
     libq3dtools_adreno \
-    android.hardware.bluetooth@1.0-impl-qti \
-    sound_trigger.primary.msm8953 \
-    vendor.qti.hardware.bluetooth_audio@2.0-impl \
-    vendor.qti.hardware.bluetooth_sar@1.0-impl \
-    vendor.qti.hardware.btconfigstore@1.0-impl \
     vulkan.msm8953 \
     libC2D2 \
     libCB \
     libOpenCL \
     libQSEEComAPI \
-    libacdb-fts \
-    libacdbloader \
-    libacdbrtac \
-    libadiertac \
     libadreno_utils \
     libadsp_default_listener \
     libadsprpc \
-    libaudcal \
-    libaudio_log_utils \
-    libaudioalsa \
-    libaudioconfigstore \
-    libaudioparsers \
     libbccQTI \
-    libbluetooth_audio_session_qti \
-    libbtnv \
     libc2d30_bltlib \
-    libcne \
-    libcneapiclient \
-    libcneoplookup \
     libdiag \
-    libdisp-aba \
-    libdpmqmihal \
     libdsutils \
     libfastcvadsp_stub \
     libfastcvopt \
-    libgcs-calwrapper \
-    libgcs-ipc \
-    libgcs-osal \
-    libgcs \
     libgpustats \
     libgsl \
     libhdr_tm \
     libidl \
-    liblistenjni \
-    liblistensoundmodel2 \
     libllvm-glnext \
     libllvm-qcom \
     libmdmdetect \
@@ -163,7 +131,6 @@ PRODUCT_PACKAGES += \
     libmm-hdcpmgr \
     libperfconfig \
     libperfgluelayer \
-    libperipheral_client \
     libqcci_legacy \
     libqdi \
     libqdp \
@@ -178,7 +145,6 @@ PRODUCT_PACKAGES += \
     libqti-perfd-client \
     libqti-perfd \
     libqti-util \
-    libqtigef \
     libscalar \
     libsdm-color \
     libsdm-diag \
@@ -189,41 +155,41 @@ PRODUCT_PACKAGES += \
     libsensor_reg \
     libthermalclient \
     libtinyxml2_1 \
-    libwms \
-    libwvdrmengine \
     sensors.ssc \
-    vendor.display.color@1.0 \
-    vendor.display.postproc@1.0 \
-    vendor.qti.data.factory@2.0 \
-    vendor.qti.hardware.bluetooth_sar@1.0 \
-    vendor.qti.hardware.data.cne.internal.api@1.0 \
-    vendor.qti.hardware.data.cne.internal.constants@1.0 \
-    vendor.qti.hardware.data.cne.internal.server@1.0 \
-    vendor.qti.hardware.data.connection@1.0 \
-    vendor.qti.hardware.data.connection@1.1 \
-    vendor.qti.hardware.data.dynamicdds@1.0 \
-    vendor.qti.hardware.data.iwlan@1.0 \
-    vendor.qti.hardware.data.latency@1.0 \
-    vendor.qti.hardware.data.qmi@1.0 \
     vendor.qti.hardware.tui_comm@1.0 \
-    vendor.qti.ims.rcsconfig@1.0_vendor \
-    vendor.qti.latency@2.0 \
-    vendor.qti.voiceprint@1.0 \
+    sound_trigger.primary.msm8953 \
+    vendor.qti.hardware.bluetooth_audio@2.0-impl \
+    libacdb-fts \
+    libacdbloader \
+    libacdbrtac \
+    libadiertac \
     libadm \
     libadpcmdec \
+    libaudcal \
+    libaudioalsa \
+    libaudioparsers \
+    libbluetooth_audio_session_qti \
     libdrc \
+    libgcs-calwrapper \
+    libgcs-ipc \
+    libgcs-osal \
+    libgcs \
+    libqtigef \
     libsmwrapper \
-    libsurround_3mic_proc \
     libvqzip \
     com.qualcomm.qti.ant@1.0 \
+    com.qualcomm.qti.dpm.api@1.0_vendor \
     com.qualcomm.qti.imscmservice@1.0 \
     com.qualcomm.qti.imscmservice@2.0 \
     com.qualcomm.qti.imscmservice@2.1 \
     com.qualcomm.qti.imscmservice@2.2 \
     com.qualcomm.qti.uceservice@2.0 \
     com.qualcomm.qti.uceservice@2.1 \
+    android.hardware.bluetooth@1.0-impl-qti \
     vendor.qti.gnss@3.0-impl \
     vendor.qti.hardware.alarm@1.0-impl \
+    vendor.qti.hardware.bluetooth_sar@1.0-impl \
+    vendor.qti.hardware.btconfigstore@1.0-impl \
     lib-imsSDP \
     lib-imscmservice \
     lib-imsdpl \
@@ -242,9 +208,15 @@ PRODUCT_PACKAGES += \
     libSecureUILib \
     libStDrvInt \
     libbt-hidlclient \
+    libbtnv \
+    libcne \
+    libcneapiclient \
+    libcneoplookup \
     libcneqmiutils \
     libconfigdb \
     libdataitems \
+    libdisp-aba \
+    libdpmqmihal \
     libdrmfs \
     libdrmtime \
     libdsi_netctrl \
@@ -266,6 +238,7 @@ PRODUCT_PACKAGES += \
     liboemaids_vendor \
     libpdmapper \
     libpdnotifier \
+    libperipheral_client \
     libqcmaputils \
     libqcrilFramework \
     libqdma_file_agent \
@@ -289,13 +262,18 @@ PRODUCT_PACKAGES += \
     libthermalfeature \
     libthermalioctl \
     libtime_genoff \
+    libwms \
     libwqe \
     libwvhidl \
     libxml \
     libxtadapter \
+    libwvdrmengine \
     qcrild_librilutils \
     qtibus \
     qtimutex \
+    vendor.display.color@1.0 \
+    vendor.display.postproc@1.0 \
+    vendor.qti.data.factory@2.0 \
     vendor.qti.gnss@1.0 \
     vendor.qti.gnss@1.1 \
     vendor.qti.gnss@1.2 \
@@ -304,6 +282,16 @@ PRODUCT_PACKAGES += \
     vendor.qti.gnss@3.0-service \
     vendor.qti.gnss@3.0 \
     vendor.qti.hardware.alarm@1.0 \
+    vendor.qti.hardware.bluetooth_sar@1.0 \
+    vendor.qti.hardware.data.cne.internal.api@1.0 \
+    vendor.qti.hardware.data.cne.internal.constants@1.0 \
+    vendor.qti.hardware.data.cne.internal.server@1.0 \
+    vendor.qti.hardware.data.connection@1.0 \
+    vendor.qti.hardware.data.connection@1.1 \
+    vendor.qti.hardware.data.dynamicdds@1.0 \
+    vendor.qti.hardware.data.iwlan@1.0 \
+    vendor.qti.hardware.data.latency@1.0 \
+    vendor.qti.hardware.data.qmi@1.0 \
     vendor.qti.hardware.fm@1.0 \
     vendor.qti.hardware.radio.am@1.0 \
     vendor.qti.hardware.radio.ims@1.0 \
@@ -327,10 +315,12 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.radio.uim_remote_client@1.0 \
     vendor.qti.hardware.radio.uim_remote_client@1.1 \
     vendor.qti.hardware.radio.uim_remote_server@1.0 \
-    vendor.qti.ims.callinfo@1.0_vendor \
+    vendor.qti.ims.callinfo@1.0 \
+    vendor.qti.ims.rcsconfig@1.0 \
     vendor.qti.imsrtpservice@2.0_vendor \
     vendor.qti.imsrtpservice@2.1-service-Impl \
     vendor.qti.imsrtpservice@2.1_vendor \
+    vendor.qti.latency@2.0 \
     dirac_resource \
     libFastRPC_AUE_Forward_skel \
     libFastRPC_UTF_Forward_Qtc2_skel \
@@ -345,16 +335,16 @@ PRODUCT_PACKAGES += \
     libfastcvadsp \
     libfastcvadsp_skel \
     com.qualcomm.qti.dpm.api@1.0 \
-    libdiag_system \
-    libdpmctmgr \
-    libdpmfdmgr \
-    libdpmframework \
-    libdpmtcm \
     lib-imscamera \
     lib-imsvideocodec \
     lib-imsvt \
     lib-imsvtextutils \
     lib-imsvtutils \
+    libdiag_system \
+    libdpmctmgr \
+    libdpmfdmgr \
+    libdpmframework \
+    libdpmtcm \
     libimscamera_jni \
     libimsmedia_jni \
     vendor.qti.imsrtpservice@2.0 \
@@ -363,12 +353,9 @@ PRODUCT_PACKAGES += \
     IWlanService \
     PowerOffAlarm \
     QtiTelephonyService \
-    imssettings \
-    uceShimService \
     dpmserviceapp \
     ims \
     qcrilmsgtunnel \
-    tcmclient \
     QtiTelephonyServicelibrary \
     com.qti.dpmframework \
     dpmapi \
